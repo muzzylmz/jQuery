@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Challenge 5</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<style>
+	body{
+		margin: 2%;
+		border: 1px solid black;
+		background-color: #b3b3b3;
+	}
+	#image{
+    	line-height:325px;
+		width: 388px;
+    	height: 325px;
+		border:5px solid black;
+		margin:0 auto;
+    	background-repeat: no-repeat;
+    	color:#FFFFFF;
+    	text-align: center;
+    	background-color: #8e68ff;
+    	background-size: 100%;
+    	margin-bottom:25px;
+    	font-size:150%;
+	}
+	.preview{
+		width:10%;
+		margin-left:17%;
+    	border: 10px solid black;
+	}
+	img{
+		width:95%;
+	}
+	h1{
+		text-align: center;
+	}
+	</style>
+
+
+</head>
+<body>
+	<h1>Challenge 5</h1>
+		<div id = "image">
+			Hover over an image below.
+		</div>
+
+		<img class = "preview"
+			tabindex = "0"
+
+			alt = "Sleeping cat"
+			src = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/why-cats-are-best-pets-independent-1559231874.jpg?crop=0.691xw:1.00xh;0.0484xw,0&resize=768:*">
+
+		<img class = "preview"
+			tabindex = "0"
+			alt = "cat is drinking"
+			src = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/why-cats-are-best-pets-intelligent-1559230993.jpg?crop=0.668xw:1.00xh;0.197xw,0&resize=768:*">
+
+		<img class = "preview"
+			tabindex = "0"
+
+			src = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/why-cats-are-best-pets-playful-1559232209.jpg?crop=0.473xw:0.794xh;0.0518xw,0.0638xh&resize=768:*"
+			alt = "cat is playing">
+
+		<img class = "preview"
+			tabindex = "0"
+
+			src = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/why-cats-are-best-pets-ideal-for-apartments-1559229126.jpg?crop=0.606xw:0.909xh;0.183xw,0&resize=768:*"
+			alt = "cat is watching">
+
+		<img class = "preview"
+			tabindex = "0"
+
+			src = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/why-cats-are-best-pets-cost-less-1559228480.jpg?crop=0.706xw:0.940xh;0.216xw,0.00230xh&resize=768:*"
+			alt = "cat is chewing">
+
+			<img class = "preview"
+				tabindex = "0"
+
+				src = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/why-cats-are-best-pets-low-maintenance-1559230488.jpg?crop=0.648xw:0.966xh;0.145xw,0.0336xh&resize=768:*"
+				alt = "cat is happy">
+	<!-- <script src = "js/challenge5.js"></script> -->
+
+	<!-- var imgs = document.querySelectorAll("img");
+	var msg = "Hover over an image below."
+	for (let i = 0; i < imgs.length;i++){
+		imgs[i].onmouseover = function() {
+		 	document.querySelector('#image').style.backgroundImage="url('"+imgs[i].src+"')";
+		 	document.querySelector('#image').innerHTML= imgs[i].alt;
+		 }
+
+		 imgs[i].onfocus = function() {
+		 	document.querySelector('#image').style.backgroundImage="url('"+imgs[i].src+"')";
+		 	document.querySelector('#image').innerHTML= imgs[i].alt;
+		 }
+
+		 imgs[i].onmouseleave = function() {
+		 	document.querySelector('#image').style.backgroundImage="url('')";
+		 	document.querySelector('#image').innerHTML= msg;
+		 }
+
+		 imgs[i].onblur = function() {
+		 	document.querySelector('#image').style.backgroundImage="url('')";
+		 	document.querySelector('#image').innerHTML= msg;
+		 }
+	} -->
+
+
+	<script>
+	$(function(){
+		$('img').mouseover(function(){
+			$("#image").css("background-image", "url('"+$(this).attr("src")+"')");
+			$('#image').html($(this).attr("alt"));
+		});
+		$('img').focus(function(){
+			$("#image").css("background-image", "url('"+$(this).attr("src")+"')");
+			$('#image').html($(this).attr("alt"));
+		});
+		$('img').mouseout(function(){
+			$("#image").css("background-image", "");
+			$("#image").html("Hover over an image below.");
+		});
+		$('img').blur(function(){
+			$("#image").css("background-image", "");
+			$("#image").html("Hover over an image below.");
+
+		});
+	});
+	</script>
+
+</body>
+</html>
